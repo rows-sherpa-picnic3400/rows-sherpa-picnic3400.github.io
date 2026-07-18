@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Mike Richardson</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <div class="nav-brand">mike@newcastle:~$</div>
+    <nav class="nav-cols">
+      <a href="index.html">home</a>
+      <a href="gallery.html" class="current">gallery</a>
+      <a href="chinese.html">chinese_drills</a>
+      <a href="values.html">values_join</a>
+      <a href="anime.html">anime_list</a>
+      <a href="resume.html">resume</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section style="border-top:none; padding-top:44px;">
+    <div class="wrap">
+      <h2>Gallery</h2>
+      <p class="section-note">SELECT * FROM drawings ORDER BY made_on DESC;</p>
+
+      <!--
+        FEATURED GIF
+        Replace src="images/featured.gif" with your actual file once it's added to /images.
+        Your gif is ~27MB — GitHub allows files up to 100MB, but keep an eye on total repo size.
+        See README.md for notes on keeping this fast to load.
+      -->
+      <figure class="feature-gif">
+        <img src="images/featured.gif" alt="Featured animated piece" loading="lazy">
+        <figcaption>featured — replace images/featured.gif with your animation</figcaption>
+      </figure>
+
+      <div class="gallery-grid">
+        <!--
+          Duplicate this <figure> block for each Krita drawing.
+          Drop files into /images and update src + figcaption.
+        -->
+        <figure>
+          <img src="images/drawing-01.jpg" alt="Drawing 1" loading="lazy">
+          <figcaption>drawing_01.jpg</figcaption>
+        </figure>
+        <figure>
+          <img src="images/drawing-02.jpg" alt="Drawing 2" loading="lazy">
+          <figcaption>drawing_02.jpg</figcaption>
+        </figure>
+        <figure>
+          <img src="images/drawing-03.jpg" alt="Drawing 3" loading="lazy">
+          <figcaption>drawing_03.jpg</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="socials">
+      <a href="https://www.instagram.com/ilikerice1234/" target="_blank" rel="noopener">instagram</a>
+      <a href="https://www.youtube.com/@PigsOnBook" target="_blank" rel="noopener">youtube</a>
+    </div>
+    <div class="copy">© 2026 Mike Richardson.</div>
+  </div>
+</footer>
+
+</body>
+</html>

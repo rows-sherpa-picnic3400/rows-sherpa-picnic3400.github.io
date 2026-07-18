@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Values Join — Mike Richardson</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <div class="nav-brand">mike@newcastle:~$</div>
+    <nav class="nav-cols">
+      <a href="index.html">home</a>
+      <a href="gallery.html">gallery</a>
+      <a href="chinese.html">chinese_drills</a>
+      <a href="values.html" class="current">values_join</a>
+      <a href="anime.html">anime_list</a>
+      <a href="resume.html">resume</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section style="border-top:none; padding-top:44px;">
+    <div class="wrap">
+      <span class="status wip">in progress</span>
+      <h2>Values Join</h2>
+      <p class="section-note">SELECT decision.* FROM decisions d JOIN values v ON … -- not yet populated</p>
+
+      <p>A mindset tool for evaluating decisions: does this opportunity actually
+      <em>join</em> with what matters to you, with a good use of time, and with something you can
+      genuinely own — work on and manage — rather than something that depends on other people or
+      circumstances? Modeled loosely on a SQL join: an opportunity only "matches" if it lines up on
+      all three keys, not just one.</p>
+
+      <div class="mock">
+        <div class="mono" style="color:var(--teal); font-size:.75rem; text-transform:uppercase; letter-spacing:.08em;">mock — the three tables</div>
+        <div class="row-demo">
+          <span class="chip on">VALUES</span>
+          <span class="chip on">TIME WELL SPENT</span>
+          <span class="chip">OWNABLE</span>
+        </div>
+        <p style="margin:0; font-size:.88rem; color:rgba(242,237,226,.75);">
+          An idea or opportunity gets entered once, then scored against each table. Where all three
+          light up, it's a strong match — worth starting. Where one is missing, the tool names which
+          one, instead of giving a single blended score.
+        </p>
+      </div>
+
+      <ul class="roadmap">
+        <li>Define your own "values" table: a short list of what actually matters, in your words</li>
+        <li>Define "ownable": things you can start and run yourself, without waiting on a partner or institution</li>
+        <li>Enter an idea or opportunity; the tool checks it against each table honestly, not to flatter it</li>
+        <li>Output: a match / partial-match / no-match, plus which join condition failed</li>
+        <li>History table: past decisions and how the joins actually played out over time</li>
+      </ul>
+
+      <p style="margin-top:24px; font-size:.85rem; color:rgba(242,237,226,.6);">
+        This is meant to sit alongside your coaching notes practice — a structured second opinion, not a replacement for it.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="copy">© 2026 Mike Richardson.</div>
+  </div>
+</footer>
+
+</body>
+</html>

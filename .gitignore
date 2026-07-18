@@ -1,0 +1,19 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Krita export leftovers
+*.kra~
+*.kritawriteonly
+*~lock~
+
+# Local test/build junk
+*.log
+.tmp/
+node_modules/

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime List — Mike Richardson</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <div class="nav-brand">mike@newcastle:~$</div>
+    <nav class="nav-cols">
+      <a href="index.html">home</a>
+      <a href="gallery.html">gallery</a>
+      <a href="chinese.html">chinese_drills</a>
+      <a href="values.html">values_join</a>
+      <a href="anime.html" class="current">anime_list</a>
+      <a href="resume.html">resume</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section style="border-top:none; padding-top:44px;">
+    <div class="wrap">
+      <h2>Anime List</h2>
+      <p class="section-note">SELECT title, rank, status FROM favourites ORDER BY rank;</p>
+
+      <p>My running favourites, kept in sync with my
+      <a href="https://archive.org/details/@follyheard33/lists/1/march-2024" target="_blank" rel="noopener">Archive.org lists</a>.
+      This table is a hand-editable copy so the list lives on the site itself — I couldn't pull the
+      live contents in automatically, so the rows below are placeholders. Swap in your real titles
+      and re-order as you like; it's plain HTML, no build step needed.</p>
+
+      <table class="rows">
+        <thead>
+          <tr><th>#</th><th>Title</th><th>Status</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <!-- Duplicate a <tr> per title. Replace placeholder text with your real entries. -->
+          <tr>
+            <td class="mono">01</td>
+            <td>— title —</td>
+            <td><span class="pill">watched</span></td>
+            <td>why it made the list</td>
+          </tr>
+          <tr>
+            <td class="mono">02</td>
+            <td>— title —</td>
+            <td><span class="pill">watching</span></td>
+            <td>why it made the list</td>
+          </tr>
+          <tr>
+            <td class="mono">03</td>
+            <td>— title —</td>
+            <td><span class="pill">rewatch</span></td>
+            <td>why it made the list</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:22px; font-size:.85rem; color:rgba(242,237,226,.6);">
+        Full lists, notes, and older rankings: see the
+        <a href="https://archive.org/details/@follyheard33/lists/1/march-2024" target="_blank" rel="noopener">Archive.org profile</a>.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="copy">© 2026 Mike Richardson.</div>
+  </div>
+</footer>
+
+</body>
+</html>
