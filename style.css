@@ -35,7 +35,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 h1,h2,h3{ font-family:'Fraunces', serif; font-weight:700; letter-spacing:-0.01em; margin:0 0 .4em; }
 .mono{ font-family:'IBM Plex Mono', monospace; }
 
-.wrap{ max-width: 880px; margin: 0 auto; padding: 0 24px; }
+.wrap{ max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
 /* ---------- header / nav styled as a query row ---------- */
 header.site{
@@ -70,6 +70,17 @@ header.site{
 }
 .nav-cols a:hover{ border-color: var(--line); color: var(--gold); }
 .nav-cols a.current{ color: var(--ink); background: var(--gold); }
+
+.theme-toggle{
+  display:flex; align-items:center; justify-content:center;
+  width: 34px; height: 34px; flex:none;
+  margin-left: auto;
+  border: 1px solid var(--line); border-radius: 50%;
+  background: transparent; color: var(--paper);
+  cursor: pointer; transition: border-color .15s, color .15s;
+}
+.theme-toggle:hover{ border-color: var(--gold); color: var(--gold); }
+.theme-toggle svg{ width:16px; height:16px; }
 
 /* ---------- hero: the "row" ---------- */
 .hero{ padding: 64px 0 40px; }
@@ -218,3 +229,71 @@ footer .copy{ font-family:'IBM Plex Mono', monospace; font-size:.72rem; color: r
   .field{ grid-template-columns: 1fr; }
   .field dt{ padding-top:0; }
 }
+
+/* ---------- light mode (reader toggle) ---------- */
+body.light{ background:#ffffff; color:#1c1c1c; }
+body.light header.site{ background: rgba(255,255,255,.92); border-bottom-color: rgba(0,0,0,.1); }
+body.light .nav-cols a{ color:#1c1c1c; }
+body.light .nav-cols a:hover{ border-color: rgba(0,0,0,.15); color:#a8762f; }
+body.light .nav-cols a.current{ color:#fff; background: var(--gold); }
+body.light .theme-toggle{ color:#1c1c1c; border-color: rgba(0,0,0,.15); }
+body.light .theme-toggle:hover{ border-color: var(--gold); color:#a8762f; }
+body.light a{ color:#a8762f; }
+body.light a:hover{ color:#c1443b; }
+body.light section{ border-top-color: rgba(0,0,0,.1); }
+body.light .record,
+body.light .tile,
+body.light .resume-block,
+body.light .join-cat,
+body.light .link-card,
+body.light .mock,
+body.light .gallery-grid figure,
+body.light .feature-gif{
+  background:#f7f6f2; border-color: rgba(0,0,0,.12);
+}
+body.light .record-head{ border-bottom-color: rgba(0,0,0,.12); }
+body.light .field{ border-bottom-color: rgba(0,0,0,.15); }
+body.light .tile p,
+body.light .link-card .v,
+body.light .inspiration,
+body.light .feature-gif figcaption,
+body.light .gallery-grid figcaption,
+body.light footer .copy{
+  color: rgba(0,0,0,.72);
+}
+body.light .inspiration p{ border-bottom-color: rgba(0,0,0,.15); }
+body.light .tier ol li,
+body.light .join-cat ul{ border-bottom-color: rgba(0,0,0,.15); color:#1c1c1c; }
+body.light .icon-link{ background:#f2f0ea; color:#1c1c1c; border-color: rgba(0,0,0,.12); }
+body.light footer{ border-top-color: rgba(0,0,0,.1); }
+body.light .status.live{ background: rgba(74,124,120,.18); }
+body.light .status.wip{ background: rgba(193,68,59,.15); }
+
+/* ---------- gallery lightbox ---------- */
+.gallery-grid figure{ cursor: zoom-in; }
+.lightbox-overlay{
+  position: fixed; inset: 0; z-index: 100;
+  display:none; align-items:center; justify-content:center;
+  background: rgba(23,27,38,.94);
+  padding: 60px 24px; cursor: zoom-out;
+}
+.lightbox-overlay.open{ display:flex; }
+.lightbox-overlay img{
+  max-width: min(1100px, 92vw); max-height: 82vh;
+  border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  cursor: default;
+}
+.lightbox-caption{
+  position:absolute; bottom:26px; left:0; right:0; text-align:center;
+  font-family:'IBM Plex Mono', monospace; font-size:.8rem; color: var(--paper);
+}
+.lightbox-close{
+  position:absolute; top:20px; right:26px; width:38px; height:38px;
+  border-radius:50%; border:1px solid var(--line);
+  background: rgba(23,27,38,.6); color: var(--paper);
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+}
+.lightbox-close:hover{ border-color: var(--gold); color: var(--gold); }
+body.light .lightbox-overlay{ background: rgba(255,255,255,.95); }
+body.light .lightbox-close{ background: rgba(255,255,255,.75); border-color: rgba(0,0,0,.15); color:#1c1c1c; }
+body.light .lightbox-caption{ color:#1c1c1c; }

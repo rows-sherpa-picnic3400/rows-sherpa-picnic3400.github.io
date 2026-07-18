@@ -10,7 +10,6 @@
 
 <header class="site">
   <div class="wrap nav-row">
-    <div class="nav-brand">mike@newcastle:~$</div>
     <nav class="nav-cols">
       <a href="index.html">home</a>
       <a href="gallery.html">gallery</a>
@@ -20,6 +19,9 @@
       <a href="anime.html">anime_list</a>
       <a href="resume.html">resume</a>
     </nav>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light background" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
   </div>
 </header>
 
@@ -28,7 +30,6 @@
     <div class="wrap">
       <span class="status wip">in progress</span>
       <h2>Values Join</h2>
-      <p class="section-note">SELECT decision.* FROM decisions d JOIN values v ON … -- not yet populated</p>
 
       <p>A mindset tool for evaluating decisions: does this opportunity actually
       <em>join</em> with what matters to you, with a good use of time, and with something you can
@@ -109,5 +110,6 @@
   </div>
 </footer>
 
+<script src="theme.js" defer></script>
 </body>
 </html>
