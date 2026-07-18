@@ -23,20 +23,18 @@ You have two options — pick whichever repo name you want the site to live at.
 Either way, GitHub Pages auto-builds nothing here — it just serves the files as-is, so there's
 no Hugo/Jekyll step to worry about.
 
-## Adding your images and the GIF
+## Adding your images
 
-1. Put your files in the `images/` folder, keeping the folder structure.
-2. In `gallery.html`, update:
-   - `images/featured.gif` → your actual GIF filename
-   - `images/drawing-01.jpg`, `-02`, `-03` → your Krita exports (duplicate the `<figure>` block
-     for more drawings)
-3. A note on the 27MB GIF: GitHub's hard limit is 100MB per file, so it'll upload fine, but a
-   27MB GIF will be slow to load on mobile/weak connections. Two options if you want it faster
-   later:
-   - Convert it to an `.mp4`/`.webm` with `<video autoplay loop muted playsinline>` instead of
-     `<img>` — video compresses far better than GIF for the same visual, often 5-10x smaller.
-   - Or keep the GIF but add a static poster/first-frame image that loads instantly, with the GIF
-     itself lazy-loaded below the fold (already using `loading="lazy"` on all gallery images).
+Put these exact files in the `images/` folder — `gallery.html` already points to them by name:
+
+- `gift-100days-gesture.mp4` — featured animation (converted from GIF to keep file size down)
+- `krita7 Automata scene.png`
+- `krita3 - magic.png`
+- `krita5 - Sargent white cloaked lady.png`
+
+Filenames with spaces are referenced in the HTML with `%20` in place of spaces (e.g.
+`krita7%20Automata%20scene.png`) — that's just URL-encoding, upload the file with its normal
+name including spaces and it'll resolve correctly.
 
 ## Editing the placeholder sections
 
@@ -52,12 +50,22 @@ no Hugo/Jekyll step to worry about.
 ## Structure
 
 ```
-index.html      home — bio row, social links, hub tiles
-gallery.html    GIF + Krita drawings
-chinese.html    Chinese character drills — placeholder/plan
-values.html     "values join" decision tool — placeholder/plan
-anime.html      anime favourites table
+index.html      home — bio row, icon social links, hub tiles
+gallery.html    featured animation + Krita drawings + Inspiration list
+chinese.html    Chinese drills — sentence patterns + roadmap for the interactive build
+spanish.html    Spanish reading — recommended beginner book
+values.html     "values join" index (Fear / Adamance / Belief) + roadmap for the interactive build
+anime.html      anime list — Top / Almost Top / Good-OK tiers
 resume.html     resume summary + LinkedIn link
 style.css       shared styles for all pages
-images/         put your gif + drawings here
+.gitignore      keeps OS/editor/Krita junk out of the repo
+images/         put your animation + drawings here (see filenames above)
 ```
+
+## Icons in the footer
+
+The footer uses small generic outline icons (pen, book, play, camera, briefcase, code brackets)
+rather than the official WordPress/YouTube/Instagram/LinkedIn/GitHub logos, since those are
+trademarked marks. They're plain inline SVG, so you can recolor or swap them for real logo PNGs
+later if you'd rather — just replace the `<svg>...</svg>` inside each `.icon-link` with an
+`<img src="images/your-logo.png">`.

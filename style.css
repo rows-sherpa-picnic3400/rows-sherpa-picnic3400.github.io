@@ -164,6 +164,44 @@ footer .wrap{ display:flex; flex-wrap:wrap; gap: 14px 22px; align-items:center; 
 footer .socials{ display:flex; flex-wrap:wrap; gap: 14px; font-family:'IBM Plex Mono', monospace; font-size:.78rem; }
 footer .copy{ font-family:'IBM Plex Mono', monospace; font-size:.72rem; color: rgba(242,237,226,.45); }
 
+/* ---------- inspiration list ---------- */
+.inspiration{ columns: 1; font-size:.9rem; color: rgba(242,237,226,.85); }
+.inspiration p{ margin: 0 0 20px; padding-bottom: 18px; border-bottom: 1px dashed var(--line); }
+.inspiration p:last-child{ border-bottom: none; }
+@media (min-width: 720px){
+  .inspiration{ columns: 2; column-gap: 32px; }
+  .inspiration p{ break-inside: avoid; }
+}
+
+/* ---------- icon social links (footer) ---------- */
+.icon-links{ display:flex; flex-wrap:wrap; gap: 14px; }
+.icon-link{
+  width: 40px; height: 40px; display:flex; align-items:center; justify-content:center;
+  border: 1px solid var(--line); border-radius: 50%;
+  color: var(--paper); background: var(--ink-soft);
+  transition: border-color .15s, color .15s, transform .15s;
+}
+.icon-link:hover{ border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.icon-link svg{ width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.6; }
+
+/* ---------- values join index ---------- */
+.join-index{ display:grid; gap: 14px; margin-top: 20px; }
+.join-cat{ border:1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; background: var(--ink-soft); }
+.join-cat .cat-head{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.join-cat .swatch{ width:16px; height:16px; border-radius:50%; flex:none; }
+.join-cat .cat-head h3{ margin:0; font-size:1rem; }
+.join-cat ul{ margin:0; padding-left: 20px; font-size:.92rem; }
+.join-cat li{ margin-bottom: 6px; }
+.join-cat p.note{ margin: 10px 0 0; font-size:.88rem; color: rgba(242,237,226,.75); }
+
+/* ---------- anime tiers ---------- */
+.tier{ margin-bottom: 40px; }
+.tier h3{ font-size: 1.15rem; margin-bottom: 4px; }
+.tier .tier-note{ font-family:'IBM Plex Mono', monospace; font-size:.72rem; color: var(--teal); text-transform:uppercase; letter-spacing:.06em; margin-bottom: 14px; display:block; }
+.tier ol{ margin:0; padding-left: 0; list-style: none; counter-reset: item; }
+.tier ol li{ counter-increment: item; display:grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: .9rem; }
+.tier ol li::before{ content: counter(item); font-family:'IBM Plex Mono', monospace; color: var(--rust-soft); font-size:.78rem; }
+
 /* placeholder pages */
 .mock{
   border: 1px dashed var(--line); border-radius: var(--radius);
