@@ -43,13 +43,11 @@
           <img src="images/krita5%20-%20Sargent%20white%20cloaked%20lady.png" alt="Sargent white cloaked lady" loading="lazy">
           <figcaption>krita5 - Sargent white cloaked lady.png</figcaption>
         </figure>
+        <figure>
+          <video src="images/gift-100days-gesture.mp4" autoplay loop muted playsinline></video>
+          <figcaption>gift-100days-gesture.mp4</figcaption>
+        </figure>
       </div>
-	  <P>
-	   <figure class="feature-gif" height: 400px; width: 500px;>
-        <video src="images/gift-100days-gesture.mp4" autoplay loop muted playsinline></video>
-        <figcaption>gift-100days-gesture.mp4</figcaption>
-      </figure>
-	  
     </div>
   </section>
 
@@ -375,6 +373,7 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
   </button>
   <img id="lightboxImg" src="" alt="">
+  <video id="lightboxVideo" style="display:none;" controls loop playsinline></video>
   <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
 
@@ -383,18 +382,32 @@
 (function(){
   var overlay = document.getElementById('lightbox');
   var imgEl = document.getElementById('lightboxImg');
+  var videoEl = document.getElementById('lightboxVideo');
   var capEl = document.getElementById('lightboxCaption');
   var closeBtn = document.getElementById('lightboxClose');
 
   document.querySelectorAll('.gallery-grid figure').forEach(function(fig){
     fig.setAttribute('tabindex', '0');
     fig.setAttribute('role', 'button');
-    fig.setAttribute('aria-label', 'Open larger image');
+    fig.setAttribute('aria-label', 'Open larger view');
     function open(){
-      var img = fig.querySelector('img');
+      var media = fig.querySelector('img, video');
       var cap = fig.querySelector('figcaption');
-      imgEl.src = img.src;
-      imgEl.alt = img.alt;
+      if(media.tagName === 'VIDEO'){
+        imgEl.style.display = 'none';
+        imgEl.src = '';
+        videoEl.style.display = 'block';
+        videoEl.src = media.currentSrc || media.src;
+        videoEl.play();
+      } else {
+        videoEl.pause();
+        videoEl.style.display = 'none';
+        videoEl.removeAttribute('src');
+        videoEl.load();
+        imgEl.style.display = 'block';
+        imgEl.src = media.src;
+        imgEl.alt = media.alt;
+      }
       capEl.textContent = cap ? cap.textContent : '';
       overlay.classList.add('open');
     }
@@ -407,6 +420,9 @@
   function closeLightbox(){
     overlay.classList.remove('open');
     imgEl.src = '';
+    videoEl.pause();
+    videoEl.removeAttribute('src');
+    videoEl.load();
   }
   closeBtn.addEventListener('click', closeLightbox);
   overlay.addEventListener('click', function(e){
